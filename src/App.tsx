@@ -1,10 +1,12 @@
 import './App.css'
-
+export const APP_TITLE = "Cards Tracker";
 function App() {
 
   return (
     <>
-      <p>Hello World</p>
+      <header>
+        <h1>{APP_TITLE}</h1>
+      </header>
     </>
   )
 }
