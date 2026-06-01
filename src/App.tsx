@@ -1,4 +1,6 @@
 import './App.css'
+import { Routes, Route } from "react-router-dom";
+import Home from "./Home";
 export const APP_TITLE = "Cards Tracker";
 function App() {
 
@@ -10,6 +12,10 @@ function App() {
         </h1>
         <hr></hr>
       </header>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </>
   )
 }
