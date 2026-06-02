@@ -3,3 +3,14 @@
 @plugin "daisyui" {
   themes: abyss --default;
 }
+
+ul {
+  display: flex;
+  list-style: none;    
+  gap: 1em;        
+}
+
+li {
+  flex: 1;
+  text-align: center;
+}
