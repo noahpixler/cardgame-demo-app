@@ -13,22 +13,25 @@ export default function Home() {
                 <h2 className="text">Start a new game to begin tracking.</h2>
             </div>
 
-            <div className="grid grid-cols-1 gap-2 w-1/8">
-                <div className="card bg-base-200">
-                    <div className="card-body text-center">
-                        <button className="btn">Skip-Bo</button>
+            <div className="m-4 p-4 border rounded-sm inline-block">
+                <h1 className="pb-4 text-2xl font-bold">Popular Games</h1>
+            <div className="grid grid-cols-1 gap-2">
+                <div>
+                    <div className="text-center">
+                        <button className="btn bg-base-200">Skip-Bo</button>
                     </div>
                 </div>
-                <div className="card bg-base-200">
-                    <div className="card-body text-center">
-                        <button className="btn">Poker</button>
+                <div>
+                    <div className="text-center">
+                        <button className="btn  bg-base-200">Poker</button>
                     </div>
                 </div>
-                <div className="card bg-base-200">
-                    <div className="card-body text-center">
-                        <button className="btn">Uno</button>
+                <div>
+                    <div className="text-center">
+                        <button className="btn bg-base-200">Uno</button>
                     </div>
                 </div>
+            </div>
             </div>
             <div className="card w-1/2">
                 <div className="p-3 m-3 overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
