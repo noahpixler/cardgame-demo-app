@@ -1,7 +1,7 @@
 export default function Stats() {
     return ( 
-        <div className="p-6">
-            <h2 className="text-2xl font-bold"> Stats </h2>
+        <div className="p-4">
+            <h1 className="pb-4 text-2xl font-bold"> Stats </h1>
         </div>
     )
 }

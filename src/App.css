@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @plugin "daisyui" {
-  themes: abyss --default;
+  themes: light --default;
 }
 
 ul {

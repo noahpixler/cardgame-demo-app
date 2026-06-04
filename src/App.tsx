@@ -1,31 +1,60 @@
-import './App.css'
+import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
+
 import Home from "./Home";
 import Games from "./Games";
 import Stats from "./Stats";
 import Create from "./Create";
 import Profile from "./Profile";
-export const APP_TITLE = "Cards Tracker";
-function App() {
 
+export const APP_TITLE = "Cards Tracker";
+
+function App() {
   return (
     <>
-      <header className="py-2 text-center">
-        <h1 className="mb-2 text-4xl font-bold ">
-          {APP_TITLE}
-        </h1>
-        <nav>
-          <ul>
+      <div className="navbar bg-base-100 shadow-sm sticky top-0 z-50">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+
+            <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow z-50">
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/games">Games</Link></li>
+              <li><Link to="/stats">Stats</Link></li>
+              <li><Link to="/create">Create</Link></li>
+              <li><Link to="/profile">Profile</Link></li>
+            </ul>
+          </div>
+          <Link to="/" className="btn btn-ghost text-xl">
+            {APP_TITLE}
+          </Link>
+        </div>
+        <div className="m-2emnavbar-center hidden lg:flex w-full">
+          <ul className="flex w-full justify-evenly">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/games">Games</Link></li>
             <li><Link to="/stats">Stats</Link></li>
             <li><Link to="/create">Create</Link></li>
             <li><Link to="/profile">Profile</Link></li>
           </ul>
-        </nav>
-        <hr></hr>
-      </header>
-
+        </div>
+        <div className="navbar-end"></div>
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/games" element={<Games />} />
@@ -34,7 +63,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
