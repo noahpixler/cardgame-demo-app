@@ -3,14 +3,3 @@
 @plugin "daisyui" {
   themes: light --default;
 }
-
-ul {
-  display: flex;
-  list-style: none;    
-  gap: 1em;        
-}
-
-li {
-  flex: 1;
-  text-align: center;
-}
