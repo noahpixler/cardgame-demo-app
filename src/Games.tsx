@@ -1,4 +1,8 @@
+import { useNavigate } from 'react-router-dom';
+
 export default function Games() {
+    const navigate = useNavigate();
+
     const games = [
         { id: 1, name: "Poker", icon: "♠️", description: "Track chips, rounds, and blinds" },
         { id: 2, name: "Uno", icon: "🎴", description: "Track scores and winners" },
@@ -35,14 +39,9 @@ export default function Games() {
                 </div>
             </div>
             <div className="flex justify-center">
-                  <button className="btn btn-primary mb-4 w-2/5">
-                    Create a Game
-                  </button>
-
-
-                
-
-
+                <button className="btn btn-primary text-xl mb-4" onClick={() => navigate('/create')}>
+                    Create Game
+                </button>
             </div>
         </>
     )
