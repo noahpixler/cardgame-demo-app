@@ -22,17 +22,35 @@ export default function Home() {
                 <div className="grid grid-cols-1 gap-2">
                     <div>
                         <div className="text-center">
-                            <button className="btn bg-base-200">Skip-Bo</button>
+                            <button className="btn bg-base-200" onClick={() =>
+                                navigate("/setup", {
+                                    state: {
+                                        gameName: "Skip-Bo",
+                                    },
+                                })
+                            }>Skip-Bo</button>
                         </div>
                     </div>
                     <div>
                         <div className="text-center">
-                            <button className="btn  bg-base-200">Poker</button>
+                            <button className="btn  bg-base-200" onClick={() =>
+                                navigate("/setup", {
+                                    state: {
+                                        gameName: "Poker",
+                                    },
+                                })
+                            }>Poker</button>
                         </div>
                     </div>
                     <div>
                         <div className="text-center">
-                            <button className="btn bg-base-200">Uno</button>
+                            <button className="btn bg-base-200" onClick={() =>
+                                navigate("/setup", {
+                                    state: {
+                                        gameName: "Uno",
+                                    },
+                                })
+                            }>Uno</button>
                         </div>
                     </div>
                 </div>

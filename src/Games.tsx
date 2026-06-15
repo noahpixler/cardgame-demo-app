@@ -49,9 +49,9 @@ export default function Games() {
             </div>
             <div className="flex justify-center">
                 <button
-                    className="btn btn-outline btn-primary text-xl"
+                    className="mb-4 btn btn-outline btn-primary text-xl"
                     onClick={() =>
-                        navigate("/setup", {
+                        navigate("/create", {
                             state: {
                                 gameName: "Custom Game",
                             },

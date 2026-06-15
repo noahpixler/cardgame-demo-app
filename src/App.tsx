@@ -8,6 +8,7 @@ import Create from "./Create";
 import Profile from "./Profile";
 import Play from "./Play";
 import GameStats from "./GameStats";
+import Setup from "./Setup";
 
 export const APP_TITLE = "Cards Tracker";
 
@@ -68,6 +69,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/play" element={<Play />} />
         <Route path="/stats/:gameId" element={<GameStats />} />
+        <Route path="/setup" element={<Setup />} />
       </Routes>
     </>
   );
