@@ -30,7 +30,16 @@ export default function Games() {
                                 </h2>
                                 <p>{game.description}</p>
 
-                                <button className="btn btn-primary mt-2">
+                                <button
+                                    className="btn btn-primary mt-2"
+                                    onClick={() =>
+                                        navigate("/setup", {
+                                            state: {
+                                                gameName: game.name,
+                                            },
+                                        })
+                                    }
+                                >
                                     Select
                                 </button>
                             </div>
@@ -39,10 +48,19 @@ export default function Games() {
                 </div>
             </div>
             <div className="flex justify-center">
-                <button className="btn btn-primary text-xl mb-4" onClick={() => navigate('/create')}>
+                <button
+                    className="btn btn-outline btn-primary text-xl"
+                    onClick={() =>
+                        navigate("/setup", {
+                            state: {
+                                gameName: "Custom Game",
+                            },
+                        })
+                    }
+                >
                     Create Game
                 </button>
-            </div>
+            </div >
         </>
-    )
+    );
 }
