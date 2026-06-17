@@ -15,4 +15,5 @@ export type GameSession = {
   startTime: string;
   endTime?: string;
   rounds: Round[];
+  winner: string;
 };

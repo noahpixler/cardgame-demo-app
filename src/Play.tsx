@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useMemo, useState } from "react";
 import type { GameSession, Round } from "./types";
+import { saveSession } from "./utils/storage";
 
 export default function Play() {
   const nav = useNavigate();
@@ -12,6 +13,7 @@ export default function Play() {
       players: ["Player 1", "Player 2"],
     };
 
+  const [startTime] = useState(new Date().toISOString());
   const [roundNumber, setRoundNumber] = useState(1);
 
   const [scores, setScores] = useState<Record<string, number>>(() => {
@@ -59,24 +61,21 @@ export default function Play() {
   }, [roundHistory]);
 
   const endGame = () => {
+    const winner = leaderboard.length > 0 ? leaderboard[0][0] : "No Winner";
     const session: GameSession = {
       id: crypto.randomUUID(),
       gameName,
       players,
-      startTime: new Date().toISOString(),
+      startTime,
       endTime: new Date().toISOString(),
       rounds: roundHistory,
+      winner,
     };
 
-    const existing = JSON.parse(localStorage.getItem("sessions") || "[]");
-    localStorage.setItem(
-      "sessions",
-      JSON.stringify([...existing, session])
-    );
+    saveSession(session);
 
     nav("/stats");
   };
-
   return (
     <div className="p-6 max-w-3xl mx-auto space-y-6">
       <div className="flex justify-between items-center">

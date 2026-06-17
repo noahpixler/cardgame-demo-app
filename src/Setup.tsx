@@ -1,5 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { savePlayer } from "./utils/storage";
+import { getPlayers } from "./utils/storage";
 
 type PlayerEntry = {
   name: string;
@@ -12,10 +14,16 @@ export default function Setup() {
 
   const { gameName } = location.state as { gameName: string };
 
-  const [players, setPlayers] = useState<PlayerEntry[]>([
-    { name: "Noah", checked: true },
-    { name: "Sarah", checked: false },
-  ]);
+const [players, setPlayers] = useState<PlayerEntry[]>(
+  () => {
+    const savedPlayers = getPlayers();
+
+    return savedPlayers.map((name) => ({
+      name,
+      checked: false,
+    }));
+  }
+);
 
   const [newPlayer, setNewPlayer] = useState("");
 
@@ -31,6 +39,7 @@ export default function Setup() {
     if (!newPlayer.trim()) return;
     if (players.some((p) => p.name === newPlayer)) return;
 
+    savePlayer(newPlayer);
     setPlayers((prev) => [
       ...prev,
       { name: newPlayer, checked: true },
