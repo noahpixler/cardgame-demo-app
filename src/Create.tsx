@@ -7,6 +7,7 @@ export default function Create() {
     const [rounds, setRounds] = useState(1);
     const [scoringType, setScoringType] = useState("highest");
     const [rules, setRules] = useState("");
+
     <div>
         <title>Cards Tracker | Create</title>
         <div className="p-4">
@@ -17,6 +18,7 @@ export default function Create() {
         e.preventDefault();
 
         const gameTemplate = {
+            id: crypto.randomUUID(),
             gameName,
             minPlayers,
             maxPlayers,

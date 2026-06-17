@@ -17,3 +17,13 @@ export type GameSession = {
   rounds: Round[];
   winner: string;
 };
+
+export type GameTemplate = {
+    id: string;
+    gameName: string;
+    minPlayers: string;
+    maxPlayers: string;
+    rounds: number;
+    scoringType: string;
+    rules: string;
+}
